@@ -1,0 +1,418 @@
+html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    --hovered-color: #4d4d4d;
+    --hovered-background: #ebebeb;
+    padding: 2rem 4rem;
+    margin: 0;
+    color: #050505;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  @media (max-width: 425px) {
+    body {
+      padding: 1rem;
+    }
+  }
+  
+  a, a:link {
+    color: #000;
+    text-decoration: none;
+    transition: 0.1s linear;
+  }
+  a:hover {
+    color: var(--hovered-color);
+  }
+  a:focus {
+    outline: none;
+  }
+  
+  input:focus,
+  button:focus {
+    outline: none;
+  }
+  
+  .page {
+    display: grid;
+    grid-template-areas: "header header" "sidebar main" "footer footer";
+    grid-template-rows: 8rem 1fr;
+    grid-template-columns: 24rem 1fr;
+  }
+  @media (max-width: 425px) {
+    .page {
+      grid-template-areas: "header header" "main main" "footer footer";
+    }
+  }
+  @media (max-width: 375px) {
+    .page {
+      grid-template-rows: 6rem 1fr;
+    }
+  }
+  
+  .header {
+    grid-area: header;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+  @media (max-width: 375px) {
+    .header {
+      gap: 0.9rem;
+    }
+  }
+  .header__logo-container {
+    width: 24rem;
+  }
+  @media (max-width: 1024px) {
+    .header__logo-container {
+      width: auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .header__logo-container {
+      flex: 1;
+    }
+  }
+  .header__logo {
+    display: inline-block;
+    background: #5469d4;
+    width: 21rem;
+    height: 6rem;
+    border-radius: 3rem;
+  }
+  .header__links {
+    flex-grow: 1;
+    display: flex;
+    gap: 0.4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .header__links {
+      display: none;
+    }
+  }
+  .header__link {
+    padding: 1.8rem 1rem;
+    box-sizing: border-box;
+    font-size: 1.7rem;
+    border-bottom: 2px solid transparent;
+  }
+  .header__link:hover {
+    border-bottom-color: var(--hovered-color);
+  }
+  .header__search-container {
+    position: relative;
+  }
+  @media (max-width: 375px) {
+    .header__search-container {
+      width: 3.8rem;
+      height: 3.8rem;
+      border-radius: 3.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--hovered-background);
+    }
+  }
+  .header__search-container > svg {
+    position: absolute;
+    left: 1.2rem;
+    top: 48%;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 375px) {
+    .header__search-container > svg {
+      position: initial;
+      transform: translate(-1px, -1px);
+    }
+  }
+  .header__search-container:hover .header__search, .header__search-container:focus-within .header__search {
+    background: var(--hovered-background);
+  }
+  .header__search {
+    width: 18.4rem;
+    height: 4.4rem;
+    border-radius: 100rem;
+    background: #f5f5f5;
+    border: 0;
+    box-sizing: border-box;
+    padding: 0.4rem 1.4rem 0.4rem 4.6rem;
+    font-size: 1.7rem;
+    transition: 0.1s linear;
+  }
+  .header__search::-webkit-input-placeholder {
+    color: #b3b3b3;
+  }
+  @media (max-width: 375px) {
+    .header__search {
+      display: none;
+    }
+  }
+  .header__user {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .header__user > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 3.8rem;
+  }
+  .header__user > a:hover {
+    background-color: var(--hovered-background);
+  }
+  .header__profile:link {
+    background-color: #000;
+   /* background: url("");*/
+    background-size: cover;
+  }
+  /*-----------------------PRODUCT*/
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+  }
+  /* Columns */
+.left-column {
+    width: 50%;
+    position: relative;
+  }
+   
+  .right-column {
+    width: 35%;
+    height: 450px;
+    margin-top: 60px;
+  }
+  /* Left Column */
+.left-column img {
+    margin: 40px 50px 50px 50px ;
+   
+    width: 450px;
+    height: 600x ;
+    position: absolute;
+    left: -50px;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+   
+  .left-column img.active {
+    opacity: 1;
+  }
+  /* Product Description */
+.product-description {
+    border-bottom: 1px solid #E1E8EE;
+    margin-bottom: 20px;
+  }
+  .product-description span {
+    font-size: 12px;
+    color: #358ED7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .product-description h1 {
+    font-weight: 300;
+    font-size: 52px;
+    color: #43484D;
+    letter-spacing: -2px;
+  }
+  .product-description p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #86939E;
+    line-height: 24px;
+  }
+  /* Product Color */
+
+  /* Responsive */
+@media (max-width: 940px) {
+    .container {
+      flex-direction: column;
+      margin-top: 60px;
+    }
+   
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+   
+    .left-column img {
+      width: 300px;
+      right: 0;
+      top: -65px;
+      left: initial;
+    }
+  }
+   
+  @media (max-width: 535px) {
+    .left-column img {
+      width: 220px;
+      top: -85px;
+    }
+  }
+.text h2{
+    font-size: 20px;
+}
+.text{
+    font-size: 15px;
+    margin-left: 315px;
+    margin-right: 25%;
+}
+.text ul {
+    list-style-type: disc;
+    margin-left: 30px;
+}
+.comment-thread {
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 30px;
+    background-color: #fff;
+    border: 1px solid transparent; /* Removes margin collapse */
+}
+.m-0 {
+    margin: 0;
+}
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Comment */
+
+.comment {
+    position: relative;
+    margin: 20px auto;
+}
+.comment-heading {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 14px;
+}
+.comment-voting {
+    width: 20px;
+    height: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.comment-voting button {
+    display: block;
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+}
+.comment-info {
+    color: rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+}
+.comment-author {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: bold;
+    text-decoration: none;
+}
+.comment-author:hover {
+    text-decoration: underline;
+}
+.replies {
+    margin-left: 20px;
+}
+
+/* Adjustments for the comment border links */
+
+.comment-border-link {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 12px;
+    height: calc(100% - 50px);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+}
+.comment-border-link:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.comment-body {
+    padding: 0 20px;
+    padding-left: 28px;
+}
+.replies {
+    margin-left: 28px;
+}
+
+/* Adjustments for toggleable comments */
+
+details.comment summary {
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+}
+details.comment summary::-webkit-details-marker {
+    display: none;
+}
+details.comment:not([open]) .comment-heading {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.comment-heading::after {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    align-self: center;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.55);
+}
+details.comment[open] .comment-heading::after {
+    content: "Click to hide";
+}
+details.comment:not([open]) .comment-heading::after {
+    content: "Click to show";
+}
+
+/* Adjustment for Internet Explorer */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Resets cursor, and removes prompt text on Internet Explorer */
+    .comment-heading {
+        cursor: default;
+    }
+    details.comment[open] .comment-heading::after,
+    details.comment:not([open]) .comment-heading::after {
+        content: " ";
+    }
+}
+
+/* Styling the reply to comment form */
+
+.reply-form textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.d-none {
+    display: none;
+}
+.add_comment{
+    padding-left: 30%;
+    
+}
