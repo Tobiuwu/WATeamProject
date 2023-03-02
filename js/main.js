@@ -22,7 +22,14 @@ $(document).ready(function () {
 });
 
 function UpdateBooksByGenre(genreOptionObj) {
-  loadAllBooks(genreOptionObj.value)
+  var isCheckboxChecked = $(genreOptionObj).is(":checked")
+
+  if (isCheckboxChecked === true) {
+    loadAllBooks(genreOptionObj.value)
+  } else {
+    loadAllBooks()
+  }
+  
 }
 
 function loadAllBooks(genreId = 0) {
